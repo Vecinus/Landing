@@ -1350,16 +1350,10 @@
             <div class="credential">
               <span class="credential-label">Email</span>
               <span class="credential-value" id="email-vecino">vecino@vecinus.test</span>
-              <button class="btn btn-ghost" data-copy="email-vecino" aria-label="Copiar email del vecino">
-                <span class="copy-feedback">Copiar</span>
-              </button>
             </div>
             <div class="credential">
               <span class="credential-label">Pass</span>
               <span class="credential-value" id="pass-vecino">Vecino123!</span>
-              <button class="btn btn-ghost" data-copy="pass-vecino" aria-label="Copiar contraseña del vecino">
-                <span class="copy-feedback">Copiar</span>
-              </button>
             </div>
           </article>
 
@@ -1368,16 +1362,10 @@
             <div class="credential">
               <span class="credential-label">Email</span>
               <span class="credential-value" id="email-presi">presidente@vecinus.test</span>
-              <button class="btn btn-ghost" data-copy="email-presi" aria-label="Copiar email del presidente">
-                <span class="copy-feedback">Copiar</span>
-              </button>
             </div>
             <div class="credential">
               <span class="credential-label">Pass</span>
               <span class="credential-value" id="pass-presi">Presi123!</span>
-              <button class="btn btn-ghost" data-copy="pass-presi" aria-label="Copiar contraseña del presidente">
-                <span class="copy-feedback">Copiar</span>
-              </button>
             </div>
           </article>
 
@@ -1386,16 +1374,10 @@
             <div class="credential">
               <span class="credential-label">Email</span>
               <span class="credential-value" id="email-admin">admin@vecinus.test</span>
-              <button class="btn btn-ghost" data-copy="email-admin" aria-label="Copiar email del administrador">
-                <span class="copy-feedback">Copiar</span>
-              </button>
             </div>
             <div class="credential">
               <span class="credential-label">Pass</span>
               <span class="credential-value" id="pass-admin">Admin123!</span>
-              <button class="btn btn-ghost" data-copy="pass-admin" aria-label="Copiar contraseña del administrador">
-                <span class="copy-feedback">Copiar</span>
-              </button>
             </div>
           </article>
         </div>
@@ -1494,31 +1476,6 @@
        JAVASCRIPT
   ================================================================ -->
   <script>
-    // -------- Copiar credenciales --------
-    document.querySelectorAll('button[data-copy]').forEach(function (btn) {
-      btn.addEventListener('click', async function () {
-        var targetId = btn.getAttribute('data-copy');
-        var el = document.getElementById(targetId);
-        if (!el) return;
-        var text = el.textContent.trim();
-        var feedback = btn.querySelector('.copy-feedback');
-        var original = feedback ? feedback.textContent : 'Copiar';
-        try {
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            await navigator.clipboard.writeText(text);
-          } else {
-            var ta = document.createElement('textarea');
-            ta.value = text; document.body.appendChild(ta); ta.select();
-            document.execCommand('copy'); document.body.removeChild(ta);
-          }
-          if (feedback) feedback.textContent = '¡Copiado!';
-        } catch (e) {
-          if (feedback) feedback.textContent = 'Error';
-        }
-        setTimeout(function () { if (feedback) feedback.textContent = original; }, 1500);
-      });
-    });
-
     // -------- Modo oscuro --------
     (function () {
       var root = document.documentElement;

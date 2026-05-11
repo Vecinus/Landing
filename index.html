@@ -972,6 +972,135 @@
     .footer-bottom strong { color: var(--text); }
 
     /* ================================================================
+       LEGAL MODALS
+    ================================================================ */
+    .legal-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(4px);
+      animation: legalFade 0.2s ease;
+    }
+    .legal-modal.open { display: flex; }
+    @keyframes legalFade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .legal-modal-dialog {
+      position: relative;
+      width: 100%;
+      max-width: 760px;
+      max-height: calc(100vh - 4rem);
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-elev);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      animation: legalRise 0.25s ease;
+    }
+    @keyframes legalRise {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: none; }
+    }
+    .legal-modal-header {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-elev);
+    }
+    .legal-modal-header h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .legal-modal-close {
+      background: transparent;
+      border: 1px solid var(--border);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+    .legal-modal-close:hover {
+      color: var(--text);
+      border-color: var(--border-strong);
+      background: var(--bg-soft);
+    }
+    .legal-modal-body {
+      flex: 1 1 auto;
+      overflow-y: auto;
+      padding: 1.5rem;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--text);
+      -webkit-overflow-scrolling: touch;
+    }
+    .legal-modal-body h4 {
+      font-family: var(--font-display);
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 1.4rem 0 0.6rem;
+    }
+    .legal-modal-body h4:first-child { margin-top: 0; }
+    .legal-modal-body p { color: var(--text-muted); margin-bottom: 0.75rem; }
+    .legal-modal-body strong { color: var(--text); font-weight: 600; }
+    .legal-modal-body ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 0.75rem 0;
+    }
+    .legal-modal-body li {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: 0.55rem;
+      color: var(--text-muted);
+    }
+    .legal-modal-body li::before {
+      content: "•";
+      position: absolute;
+      left: 0.25rem;
+      color: var(--primary);
+      font-weight: 700;
+    }
+    .legal-modal-body a { color: var(--primary); }
+    .legal-modal-body a:hover { text-decoration: underline; }
+    .legal-modal-footer {
+      flex: 0 0 auto;
+      padding: 1rem 1.5rem 1.25rem;
+      border-top: 1px solid var(--border);
+      background: var(--bg-elev);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+    body.legal-modal-open { overflow: hidden; }
+    @media (max-width: 600px) {
+      .legal-modal { padding: 0.75rem; }
+      .legal-modal-header { padding: 1rem; }
+      .legal-modal-header h3 { font-size: 1rem; }
+      .legal-modal-body { padding: 1.25rem; font-size: 0.92rem; }
+    }
+
+    /* ================================================================
        SCROLL ANIMATIONS
     ================================================================ */
     .reveal {
@@ -1026,7 +1155,7 @@
         <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema" title="Cambiar tema">
           <span id="themeIcon">🌙</span>
         </button>
-        <a href="https://vecinus-s3.onrender.com" class="btn btn-primary" target="_blank" rel="noopener">
+        <a href="https://vecinus-ppl.onrender.com" class="btn btn-primary" target="_blank" rel="noopener">
           Acceder a la app
         </a>
       </div>
@@ -1052,7 +1181,7 @@
             chatbot inteligente y transcripción automática de actas de juntas.
           </p>
           <div class="hero-actions">
-            <a href="https://vecinus-s3.onrender.com" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+            <a href="https://vecinus-ppl.onrender.com" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
               Probar demo en vivo →
             </a>
             <a href="#cuentas-prueba" class="btn btn-outline btn-lg">
@@ -1383,7 +1512,7 @@
         </div>
 
         <div class="accounts-cta">
-          <a href="https://vecinus-s3.onrender.com" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+          <a href="https://vecinus-ppl.onrender.com" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
             Acceder a la app →
           </a>
         </div>
@@ -1411,7 +1540,7 @@
         <h2>¿Listo para modernizar tu comunidad?</h2>
         <p>Pruébalo ahora con una cuenta de demo o ponte en contacto con el equipo para una presentación a medida.</p>
         <div class="final-cta-actions">
-          <a href="https://vecinus-s3.onrender.com" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+          <a href="https://vecinus-ppl.onrender.com" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
             Probar demo gratis
           </a>
           <a href="mailto:vecinusispp@gmail.com" class="btn btn-outline btn-lg">
@@ -1458,10 +1587,10 @@
         <div class="footer-col">
           <h4>Legal</h4>
           <ul>
-            <li><a href="#">Aviso legal</a></li>
-            <li><a href="#">Política de privacidad</a></li>
-            <li><a href="#">Cookies</a></li>
-            <li><a href="#">RGPD</a></li>
+            <li><a href="#" data-legal="aviso-legal">Aviso legal</a></li>
+            <li><a href="#" data-legal="privacidad">Política de privacidad</a></li>
+            <li><a href="#" data-legal="cookies">Cookies</a></li>
+            <li><a href="#" data-legal="rgpd">RGPD</a></li>
           </ul>
         </div>
       </div>
@@ -1471,6 +1600,20 @@
       </div>
     </div>
   </footer>
+
+  <!-- ============ LEGAL MODAL ============ -->
+  <div class="legal-modal" id="legalModal" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle">
+    <div class="legal-modal-dialog">
+      <div class="legal-modal-header">
+        <h3 id="legalModalTitle">Información legal</h3>
+        <button class="legal-modal-close" aria-label="Cerrar">✕</button>
+      </div>
+      <div class="legal-modal-body" id="legalModalBody"></div>
+      <div class="legal-modal-footer">
+        Vecinus · Proyecto académico ISSP · Universidad de Sevilla
+      </div>
+    </div>
+  </div>
 
   <!-- ================================================================
        JAVASCRIPT
@@ -1560,6 +1703,115 @@
         });
       }, { threshold: 0.3 });
       io2.observe(demo);
+    })();
+
+    // -------- Modales legales --------
+    (function () {
+      var modal = document.getElementById('legalModal');
+      if (!modal) return;
+      var titleEl = document.getElementById('legalModalTitle');
+      var bodyEl = document.getElementById('legalModalBody');
+      var closeBtn = modal.querySelector('.legal-modal-close');
+
+      var contents = {
+        'aviso-legal': {
+          title: 'Aviso legal',
+          html: '\
+            <h4>Titulares responsables</h4>\
+            <p>Kevin Amador Calzadilla, Joaquín Borja León, Fernando Cobos García, Adrián Díaz Vázquez, Ariel Escobar Capilla, Ángel Manuel Ferrer Álvarez, Héctor Guerra Prada, Esteban López Pérez, Alejandro Mantecón Rodríguez, Jesús Oria Arenas, Rares Nicolae Petre, Jesús Pons Morís, Juan Ramírez Morales, José Ángel Rodríguez Durán y Manuel Zurita Fernández.</p>\
+            <h4>Identificación</h4>\
+            <ul>\
+              <li><strong>NIF/CIF:</strong> G-00000000 (Proyecto en fase de desarrollo académico / En trámite de constitución).</li>\
+              <li><strong>Domicilio:</strong> Escuela Técnica Superior de Ingeniería Informática (ETSII), Avda. Reina Mercedes, s/n, 41012, Sevilla (España).</li>\
+              <li><strong>Email de contacto:</strong> <a href="mailto:vecinusispp@gmail.com">vecinusispp@gmail.com</a></li>\
+              <li><strong>Nombre de la aplicación:</strong> Vecinus</li>\
+            </ul>\
+            <h4>Propiedad intelectual</h4>\
+            <p>El código fuente, diseño y algoritmos son propiedad de los titulares identificados. Se prohíbe su reproducción fuera del ámbito académico de la Universidad de Sevilla.</p>\
+            <h4>Exención de responsabilidad académica</h4>\
+            <p>Vecinus es un prototipo académico (ETSII). Los desarrolladores no se hacen responsables de fallos técnicos o decisiones tomadas por la comunidad basadas en el uso de la app.</p>\
+            <h4>Jurisdicción</h4>\
+            <p>Para cualquier controversia, las partes se someten a los Juzgados y Tribunales de Sevilla, renunciando a cualquier otro fuero.</p>\
+          '
+        },
+        'privacidad': {
+          title: 'Política de privacidad',
+          html: '\
+            <h4>Roles en el tratamiento</h4>\
+            <ul>\
+              <li><strong>Responsable del Tratamiento:</strong> La Comunidad de Propietarios (representada por su Presidente/Administrador).</li>\
+              <li><strong>Encargado del Tratamiento:</strong> El equipo de desarrollo de Vecinus.</li>\
+            </ul>\
+            <h4>Finalidades y minimización de datos</h4>\
+            <ul>\
+              <li><strong>Registro y Perfil:</strong> Recogida de email (privado, para gestión de login) y nombre (visible en el chat comunitario para identificación entre vecinos).</li>\
+              <li><strong>Gestión de Actas con IA:</strong> Procesamiento de grabaciones de voz para transcripción automática. <strong>Garantía técnica:</strong> el archivo de audio original se elimina de forma permanente e inmediata tras generar el texto.</li>\
+              <li><strong>Chatbot Comunitario:</strong> El procesamiento de documentos (PDF/Texto) se limita al contexto de la comunidad. Los datos no se comparten con terceros para entrenamiento de modelos externos.</li>\
+              <li><strong>Gestión de Incidencias:</strong> Las imágenes deben limitarse a la descripción del desperfecto. Se prohíbe captar rostros o matrículas. Se advierte de que Vecinus no elimina metadatos (GPS) de las fotos subidas.</li>\
+              <li><strong>Votaciones:</strong> Restringidas a propietarios o representantes, requieren autenticación por correo electrónico. El voto se pondera según el porcentaje de propiedad. Los resultados son vinculantes y se garantizan mediante medidas de integridad.</li>\
+            </ul>\
+            <h4>Derechos</h4>\
+            <p>Los usuarios pueden ejercer sus derechos de acceso, rectificación, supresión y portabilidad enviando un correo a <a href="mailto:vecinusispp@gmail.com">vecinusispp@gmail.com</a>.</p>\
+            <h4>Uso de Inteligencia Artificial</h4>\
+            <p>La redacción de actas y el chatbot son asistidos por IA. El contenido generado es informativo y el Administrador tiene la obligación legal de revisar y validar el resultado antes de su firma oficial.</p>\
+          '
+        },
+        'cookies': {
+          title: 'Política de cookies',
+          html: '\
+            <h4>Cookies y almacenamiento local</h4>\
+            <p>Vecinus utiliza únicamente <strong>cookies técnicas y almacenamiento local</strong> necesarios para mantener la sesión activa y conservar las preferencias del usuario (por ejemplo, el modo oscuro).</p>\
+            <p>No se realiza seguimiento publicitario ni perfilado, por lo que estas cookies <strong>no requieren consentimiento previo</strong> según el Art. 22.2 de la LSSI.</p>\
+            <h4>Gestión por parte del usuario</h4>\
+            <p>El usuario puede en cualquier momento eliminar las cookies y los datos de almacenamiento local desde la configuración de su navegador. Tenga en cuenta que esto puede afectar al funcionamiento de la sesión iniciada en Vecinus.</p>\
+          '
+        },
+        'rgpd': {
+          title: 'RGPD · Encargado de tratamiento (Art. 28)',
+          html: '\
+            <p>Este anexo vincula a la <strong>Comunidad de Propietarios</strong> (Responsable del Tratamiento) con los <strong>desarrolladores de Vecinus</strong> (Encargado del Tratamiento), conforme al Art. 28 del Reglamento General de Protección de Datos.</p>\
+            <h4>Instrucciones</h4>\
+            <p>Vecinus tratará los datos personales únicamente según las directrices de la Comunidad y para las finalidades descritas en la política de privacidad.</p>\
+            <h4>Seguridad</h4>\
+            <p>Se implementan medidas de cifrado y <strong>control de acceso por roles</strong> (Administrador, Presidente, Vecino, Empleado), garantizando la estanqueidad de los datos entre comunidades.</p>\
+            <h4>Subencargados</h4>\
+            <p>La Comunidad autoriza el uso de infraestructura de terceros (hosting, APIs de IA) necesarios para la prestación del servicio.</p>\
+            <h4>Secreto profesional</h4>\
+            <p>Todos los desarrolladores se comprometen a la confidencialidad estricta sobre los datos a los que tengan acceso, incluso tras la finalización del servicio.</p>\
+            <h4>Derechos de los interesados</h4>\
+            <p>Cualquier interesado puede ejercer sus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad enviando un correo a <a href="mailto:vecinusispp@gmail.com">vecinusispp@gmail.com</a>.</p>\
+          '
+        }
+      };
+
+      function openLegal(key) {
+        var c = contents[key];
+        if (!c) return;
+        titleEl.textContent = c.title;
+        bodyEl.innerHTML = c.html;
+        modal.classList.add('open');
+        document.body.classList.add('legal-modal-open');
+        bodyEl.scrollTop = 0;
+        closeBtn.focus();
+      }
+      function closeLegal() {
+        modal.classList.remove('open');
+        document.body.classList.remove('legal-modal-open');
+      }
+
+      document.querySelectorAll('[data-legal]').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          openLegal(link.getAttribute('data-legal'));
+        });
+      });
+      closeBtn.addEventListener('click', closeLegal);
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) closeLegal();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('open')) closeLegal();
+      });
     })();
   </script>
 </body>

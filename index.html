@@ -1588,6 +1588,7 @@
           <h4>Legal</h4>
           <ul>
             <li><a href="#" data-legal="aviso-legal">Aviso legal</a></li>
+            <li><a href="#" data-legal="terminos">Términos y condiciones</a></li>
             <li><a href="#" data-legal="privacidad">Política de privacidad</a></li>
             <li><a href="#" data-legal="cookies">Cookies</a></li>
             <li><a href="#" data-legal="rgpd">RGPD</a></li>
@@ -1748,10 +1749,19 @@
               <li><strong>Gestión de Actas con IA:</strong> Procesamiento de grabaciones de voz para transcripción automática. <strong>Garantía técnica:</strong> el archivo de audio original se elimina de forma permanente e inmediata tras generar el texto.</li>\
               <li><strong>Chatbot Comunitario:</strong> El procesamiento de documentos (PDF/Texto) se limita al contexto de la comunidad. Los datos no se comparten con terceros para entrenamiento de modelos externos.</li>\
               <li><strong>Gestión de Incidencias:</strong> Las imágenes deben limitarse a la descripción del desperfecto. Se prohíbe captar rostros o matrículas. Se advierte de que Vecinus no elimina metadatos (GPS) de las fotos subidas.</li>\
-              <li><strong>Votaciones:</strong> Restringidas a propietarios o representantes, requieren autenticación por correo electrónico. El voto se pondera según el porcentaje de propiedad. Los resultados son vinculantes y se garantizan mediante medidas de integridad.</li>\
+              <li><strong>Tablón de Anuncios:</strong> Los anuncios se almacenan según instrucciones de administración. Las imágenes se alojan en infraestructura CDN de terceros. El estado (borrador/publicado) controla la visibilidad.</li>\
+              <li><strong>Votaciones:</strong> Restringidas a propietarios o representantes, requieren autenticación por correo electrónico. El voto se pondera según el porcentaje de propiedad dentro de la comunidad. El usuario es responsable de sus credenciales y la plataforma no responde por accesos indebidos. Los resultados, calculados de forma ponderada y dentro de un plazo definido, son vinculantes y se garantizan mediante medidas de integridad.</li>\
+              <li><strong>Anonimización y Recuperación de Cuentas:</strong> Los usuarios pueden solicitar la eliminación de su perfil, que anonimiza sus datos (nombre → "Deleted User [ID]", email → "deleted_[ID]@deleted.com"). El sistema genera un identificador único de recuperación almacenado localmente en el dispositivo. Posteriormente, pueden recuperar la cuenta proporcionando este ID, contraseña y nuevas credenciales (nombre, email, avatar).</li>\
             </ul>\
+            <h4>Cookies y almacenamiento local</h4>\
+            <p>Vecinus utiliza únicamente cookies técnicas y almacenamiento local necesarios para mantener la sesión activa. No se realiza seguimiento publicitario, por lo que no requieren consentimiento previo (Art. 22.2 LSSI).</p>\
             <h4>Derechos</h4>\
-            <p>Los usuarios pueden ejercer sus derechos de acceso, rectificación, supresión y portabilidad enviando un correo a <a href="mailto:vecinusispp@gmail.com">vecinusispp@gmail.com</a>.</p>\
+            <p>Los usuarios pueden ejercer sus derechos de acceso, rectificación, supresión y portabilidad mediante:</p>\
+            <ul>\
+              <li><strong>Email:</strong> <a href="mailto:vecinusispp@gmail.com">vecinusispp@gmail.com</a></li>\
+              <li><strong>Anonimización integrada:</strong> Opción directa en la aplicación (Cuenta &gt; Gestión de cuenta &gt; Anonimizar) que genera un ID de recuperación único.</li>\
+              <li><strong>Recuperación:</strong> Los usuarios con cuentas anonimizadas pueden restaurarlas con su ID de recuperación en la pantalla de "Recuperar cuenta".</li>\
+            </ul>\
             <h4>Uso de Inteligencia Artificial</h4>\
             <p>La redacción de actas y el chatbot son asistidos por IA. El contenido generado es informativo y el Administrador tiene la obligación legal de revisar y validar el resultado antes de su firma oficial.</p>\
           '
@@ -1775,11 +1785,33 @@
             <h4>Seguridad</h4>\
             <p>Se implementan medidas de cifrado y <strong>control de acceso por roles</strong> (Administrador, Presidente, Vecino, Empleado), garantizando la estanqueidad de los datos entre comunidades.</p>\
             <h4>Subencargados</h4>\
-            <p>La Comunidad autoriza el uso de infraestructura de terceros (hosting, APIs de IA) necesarios para la prestación del servicio.</p>\
+            <p>La Comunidad autoriza el uso de proveedores de terceros necesarios para la prestación del servicio: <strong>hosting, CDN de imágenes e infraestructura de IA</strong>.</p>\
             <h4>Secreto profesional</h4>\
             <p>Todos los desarrolladores se comprometen a la confidencialidad estricta sobre los datos a los que tengan acceso, incluso tras la finalización del servicio.</p>\
             <h4>Derechos de los interesados</h4>\
             <p>Cualquier interesado puede ejercer sus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad enviando un correo a <a href="mailto:vecinusispp@gmail.com">vecinusispp@gmail.com</a>.</p>\
+          '
+        },
+        'terminos': {
+          title: 'Términos y condiciones de uso',
+          html: '\
+            <p><em>Contrato de servicios y normativa de convivencia digital.</em></p>\
+            <h4>4.1. Propiedad intelectual</h4>\
+            <p>El código fuente, diseño y algoritmos son propiedad de los titulares identificados en el Aviso Legal. Se prohíbe su reproducción fuera del ámbito académico de la Universidad de Sevilla.</p>\
+            <h4>4.2. Uso de Inteligencia Artificial</h4>\
+            <p>Se informa que la redacción de actas y el chatbot son asistidos por IA. El contenido generado es informativo. El Administrador tiene la obligación legal de revisar y validar el resultado antes de su firma oficial.</p>\
+            <h4>4.3. Validez de la firma electrónica</h4>\
+            <p>El usuario acepta su validez para la aprobación interna de documentos, vinculando su identidad de usuario al registro del trazo y marca de tiempo.</p>\
+            <h4>4.4. Gestión multicomunidad</h4>\
+            <p>El Administrador garantiza que tiene autorización de cada comunidad para darla de alta, asegurando la estanqueidad de datos entre ellas.</p>\
+            <h4>4.5. Tablón de anuncios</h4>\
+            <p>Solo administradores y presidentes pueden crear anuncios. Los anuncios en estado borrador no son visibles para los vecinos; los publicados son visibles para toda la comunidad. Pueden programarse para publicación automática en fecha y hora especificadas. Las imágenes se alojan en servidores CDN externos.</p>\
+            <h4>4.6. Sistema de votaciones</h4>\
+            <p>El voto es nominal y vinculado a cada propiedad según <strong>LPH Art. 15 y 17</strong>. Se pondera según coeficiente de propiedad. Las propiedades marcadas como morosas (<strong>Art. 15.2 LPH</strong>) quedan automáticamente excluidas del censo electoral. Los resultados se calculan mediante <strong>doble mayoría</strong> (personas + cuotas). Los datos se conservan para trazabilidad, garantía de integridad y cumplimiento normativo.</p>\
+            <h4>4.7. Exención de responsabilidad académica</h4>\
+            <p>Vecinus es un prototipo académico (ETSII). Los desarrolladores no se hacen responsables de fallos técnicos o decisiones tomadas por la comunidad basadas en el uso de la app.</p>\
+            <h4>4.8. Jurisdicción</h4>\
+            <p>Para cualquier controversia, las partes se someten a los Juzgados y Tribunales de Sevilla, renunciando a cualquier otro fuero.</p>\
           '
         }
       };
